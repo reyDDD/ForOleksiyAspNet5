@@ -1,0 +1,23 @@
+﻿@model ForOleksiyAspNet5.Models.Moves[]
+@{ 
+    Layout = "_Layout";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-controller="Home" asp-action="Filter">
+                <div class="form-group">
+                    <label asp-for="created_start" class="form-label">Start_date</label>
+                    <input name="created_start" class="form-control" type="date" value="@(((DateTime)ViewData["Start_date"]).ToString("yyyy-MM-dd"))">
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="created_end" class="form-label">End_date</label>
+                    <input name="created_end" class="form-control" type="date" value="@(((DateTime)ViewData["End_date"]).ToString("yyyy-MM-dd"))">
+                </div>
+
+                <input type="submit" class="btn btn-primary" value="get data" />
+            </form>
+        </div>
+    </div>
+</div>
